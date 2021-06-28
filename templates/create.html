@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+{% for key in msg %}
+<h4>{{ msg[key] }}</h4>
+{% endfor %}
+    <form method = "POST">
+        <input type="text" name = "username" placeholder="Enter your username">
+        <input type="Submit" formaction = "create" value="Click here">
+    </form>
+{% endblock content %}

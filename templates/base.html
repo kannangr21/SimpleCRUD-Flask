@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            User Details
+        </title>
+    </head>
+    <body>
+        <h3>
+            Simple API Server.
+        </h3>
+        <p>
+            This is a simple website which simply stores, modifies & delete user details.
+        </p>
+        {% block content %}
+        <form method = "GET">
+            {% for key in js %}
+            <p>{{ js[key] }} </p>
+            {% endfor %}
+            <button formaction = "create">Create a profile</button>
+            <button formmethod="GET" formaction = "retrieve">Read Data</button>
+            <button formmethod="GET" formaction = "update">Update Data</button>
+            <button formmethod="GET" formaction = "remove">Delete User</button>
+        </form>
+        {% endblock content %}
+    </body>
+</html>

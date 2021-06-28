@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{% if flag == True %}
+<h2>The details : </h2><br>
+{% for key in re %}
+<p>{{key}}:{{re[key]}}</p><br>
+{% endfor %}
+{% else %}
+<form method="POST">
+    <input type="text" name="username" placeholder="Enter the username">
+    <input type="submit" formaction="retrieve" name="Hit here">
+</form>
+{% endif %}
+{% endblock %}

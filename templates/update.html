@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+{% for key in msg %}
+<h4>{{ msg[key] }}</h4>
+{% endfor %}
+{% if flag == True%}
+<form method="POST">
+    <input type="hidden" value = {{uname}} name="username">
+    <input type = "text" placeholder = "Enter your name" name="name"><br>
+    <input type = "text" placeholder = "Enter your DOB" name="dob"><br>
+    <input type = "number" placeholder = "Enter your Age" name="age"><br>
+    <input type = "text" placeholder = "Enter your edu qualification" name="edu"><br>
+    <input type = "submit" formaction="update" value= "Click to submit">
+</form>
+{% else %}
+<form method = "POST">
+    <input type="text" placeholder="Enter the username" name = "username">
+    <input type="submit" formaction = "update" value="Hit to update">
+</form>
+{% endif %}
+{% endblock content %}
